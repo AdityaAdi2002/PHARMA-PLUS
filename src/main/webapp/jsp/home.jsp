@@ -18,7 +18,7 @@
 <body>
 	<div id="parent">
 		<div class="admin">
-			<a href="adminlogin.jsp" class="admin" style="text-decoration: none;"><img
+			<a href="/jsp/adminlogin.jsp" class="admin" style="text-decoration: none;"><img
 				height="60px" width="60px" alt="unknown"
 				src="../images/adminlogo.png"></a>
 		</div>

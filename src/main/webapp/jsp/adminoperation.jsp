@@ -81,18 +81,18 @@ form{
     <div class="main">
     <nav>
        <div class="container">
-         <div><a href="./home.jsp" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
-        <div><a href="./aboutus.jsp" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
-        <div><a href="./product.jsp" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
+         <div><a href="./jsp/home.jsp" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
+        <div><a href="./jsp/aboutus.jsp" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
+        <div><a href="./jsp/product.jsp" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
         
       </div>
     </nav>
     <hr>
    <h1>${pass}</h1>
         <table cellspacing="30em">
-           <tr><td ><strong><button class="but1"><a href="admininsert.jsp" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
-           <tr><td><strong><button class="but2"><a href="adminupdate.jsp" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
-            <tr><td><strong><button class="but3"><a href="admindelete.jsp" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
+           <tr><td ><strong><button class="but1"><a href="/jsp/admininsert.jsp" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
+           <tr><td><strong><button class="but2"><a href="/jsp/adminupdate.jsp" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
+            <tr><td><strong><button class="but3"><a href="/jsp/admindelete.jsp" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
         </table>
   
 </body>

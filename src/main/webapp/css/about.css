@@ -40,8 +40,8 @@
 	color: white;
 	position: relative;
 	left: -15rem;
-	font-size: 25px
-	font-family:"'Times New Roman', Times, serif;"
+	font-size: 25px;
+	font-family:" 'Times New Roman', Times, serif;"
 }
 
 #child2 {
@@ -64,7 +64,7 @@
 
 .about {
 	background-image:
-		url("https://cdn.pixabay.com/photo/2020/03/03/04/54/addict-4897533_960_720.jpg");
+		url("../images/istockphoto-1325914527-1024x1024-transformed.jpeg");
 	height: 550px;
 	background-size: cover;
 	display: flex;

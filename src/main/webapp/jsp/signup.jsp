@@ -9,34 +9,40 @@
     <link rel="stylesheet" href="../css/signup.css">
 </head>
 <body>
-       <div id="parent">
-    <div class="admin">
-        <a href="/jspadminlogin.jsp" class="admin" style="text-decoration:none;">Admin</a>
-    </div>
-</div>
-<section class="parent1">
-    <div class="child1">
-        <h1>PHARM+</h1>
-    </div>
-    <div id="child2">
-        <div id="child">
-        <a href="/jsp/home.jsp" style="text-decoration: none; color: white; ">Home</a>
-    </div>
-    <div>
-        <a href="/jsp/product.jsp" style="text-decoration: none; color: white;">Products</a>
-    </div>
-    <div>
-        <a href="/jsp/login.jsp" style="text-decoration: none; color: white;">login</a>
-    </div>
-    <div>
-        <a href="/jsp/signup.jsp" style="text-decoration: none; color: white;">SignUp</a>
-    </div>
-    <div>
-        <a href="/jsp/aboutus.jsp" style="text-decoration: none; color: white;">About us</a>
-    </div>
-   
-</div>
-</section>
+      <div id="parent">
+		<div class="admin">
+			<a href="adminlogin.jsp" class="admin" style="text-decoration: none;"><img
+				height="60px" width="60px" alt="unknown"
+				src="../images/adminlogo.png"></a>
+		</div>
+	</div>
+	<section class="parent1">
+		<div class="child1">
+			<a href="/jsp/home.jsp" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
+		</div>
+		<div id="child2">
+			<div id="child">
+				<a href="/jsp/home.jsp" style="text-decoration: none; color: white;">Home</a>
+			</div>
+			<div>
+				<a href="/jsp/product.jsp"
+					style="text-decoration: none; color: white;">Products</a>
+			</div>
+			<div>
+				<a href="/jsp/login.jsp"
+					style="text-decoration: none; color: white;">Login</a>
+			</div>
+			<div>
+				<a href="/jsp/signup.jsp"
+					style="text-decoration: none; color: white;">SignUp</a>
+			</div>
+			<div>
+				<a href="/jsp/aboutus.jsp"
+					style="text-decoration: none; color: white;">About us</a>
+			</div>
+
+		</div>
+	</section>
 ${fail}
      <div class="bodycentre">
     <form action="/customersignup" method="post">
