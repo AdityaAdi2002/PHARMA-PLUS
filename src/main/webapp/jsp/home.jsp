@@ -32,7 +32,7 @@
 				<a href="/jsp/home.jsp" style="text-decoration: none; color: white;">Home</a>
 			</div>
 			<div>
-				<a href="/jsp/product.jsp"
+				<a href="/Customer/products"
 					style="text-decoration: none; color: white;">Products</a>
 			</div>
 			<div>
@@ -51,6 +51,8 @@
 		</div>
 	</section>
 	<h1>${pass}</h1>
+	<h2>${fail}</h1>
+	
 	<div id="carouselExampleSlidesOnly" class="carousel slide"
 		data-bs-ride="carousel">
 		<div class="carousel-inner">

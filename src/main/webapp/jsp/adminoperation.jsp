@@ -89,10 +89,14 @@ form{
     </nav>
     <hr>
    <h1>${pass}</h1>
+   <h1>${fail}</h1>
+   
         <table cellspacing="30em">
            <tr><td ><strong><button class="but1"><a href="/jsp/admininsert.jsp" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
+           <tr><td ><strong><button class="but1"><a href="/admin/products" style="text-decoration: none;font-size: 20px;color: black;">View all Product</a></button></strong></td></tr>
            <tr><td><strong><button class="but2"><a href="/jsp/adminupdate.jsp" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
             <tr><td><strong><button class="but3"><a href="/jsp/admindelete.jsp" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
+            <tr><td ><strong><button class="but1"><a href="admin/Customer" style="text-decoration: none;font-size: 18px;color: black;">view all customers</a></button></strong></td></tr>
         </table>
   
 </body>

@@ -1,3 +1,4 @@
+<%@page import="com.protech.pharmaplus.dto.Customer"%>
 <%@page import="org.apache.commons.codec.binary.Base64"%>
 <%@page import="com.protech.pharmaplus.dto.Product"%>
 <%@page import="java.util.List"%>
@@ -95,7 +96,7 @@ td {
 <body>
 
 	<%
-	List<Product> list = (List<Product>) request.getAttribute("list");
+	List<Customer> list = (List<Customer>) request.getAttribute("list");
 	%>
 
 	<div class="main">
@@ -127,41 +128,34 @@ td {
 
 
 		<div id="cart_imagehead">
-			<h1>Admin Cart Table</h1>
+			<h1>Customer Details</h1>
 		</div>
 		<center>
 			<table style="text-align: center;" id="cart_table" cellspacing="5em"
 				cellpadding="50em" border="2em">
 
 				<tr id="cart_head">
-					<td style="text-align: center; padding: 20px;"><h3>Product
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER ID
 							ID</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>Product
-							Brand</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>Product
-							Image</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>Product
-							Name</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>Price</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>Quantity</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER FIRST
+							NAME</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER LAST NAME
+							</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>E-MAIL</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>MOBILE-NO</h3></td>
+					
 				</tr>
 				<%
-				for (Product prod : list) {
+				for (Customer cust:list) {
 				%>
 				<tr>
-					<td style="text-align: center;"><%=prod.getId()%></td>
-					<td id="cart_image"><%=prod.getBrand()%></td>
-					<td id="cart_image">
-						<%
-						String base64 = Base64.encodeBase64String(prod.getImage());
-						%> <img height="300" width="300" alt="unknown"
-						src="data:image/jpeg;base64,<%=base64%>">
+					<td style="text-align: center;"><%=cust.getId()%></td>
+					<td id="cart_image"><%=cust.getFname()%></td>
+					<td id="cart_image"><%=cust.getLname()%></td>
+					<td style="text-align: center;"><h3><%=cust.getEmail()%></h3>
 					</td>
-					<td style="text-align: center;">
-						<h3><%=prod.getName()%></h3>
-					</td>
-					<td style="text-align: center;"><%=prod.getPrice()%></td>
-					<td style="text-align: center;"><%=prod.getSize()%></td>
+					<td style="text-align: center;"><%=cust.getMno()%></td>
+					
 				</tr>
 
 				<%

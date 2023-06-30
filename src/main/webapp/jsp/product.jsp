@@ -1,3 +1,6 @@
+<%@page import="org.apache.commons.codec.binary.Base64"%>
+<%@page import="com.protech.pharmaplus.dto.Product"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,7 +21,9 @@
 	padding: 0;
 	margin: 0;
 }
-
+body{
+overflow-x:hidden;
+}
 #parent {
 	display: flex;
 	justify-content: end;
@@ -80,14 +85,15 @@
             width: 90%;
             margin: auto;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
         .child_product_container1{
-            width: 20%;
+            width: 30%;
             border: 1px solid black; 
             border-style: none;
             text-align: center;
             padding: 10px;
+            
         }
         .img1{
             width: 220px;
@@ -136,6 +142,8 @@
 				<a href="/jsp/product.jsp"
 					style="text-decoration: none; color: white;">Products</a>
 			</div>
+			
+			<%List<Product> list=(List<Product>)request.getAttribute("list"); %>
 			<div>
 				<a href="/jsp/login.jsp"
 					style="text-decoration: none; color: white;">Login</a>
@@ -167,254 +175,36 @@
               </div>
               <!-- products -->
     <!-- <div><marquee behavior="alternate" direction="right" style="font-size: 50px;font-style: italic;">Collection</marquee></div> -->
-    <div style="font-size: 50px;font-style: italic;position: relative;left: 50px;">Electronics Items</div>
+    <div style="font-size: 50px;font-style: italic;position: relative;left: 50px;">MEDICINES</div>
+    
     <div class="product_container">
         
         <div class="child_product_container">
-            <div class="child_product_container1"><img src="../image/lapimg.jpg" alt="" class="img1">
+        
+        <%for(Product prod:list) {%>
+    
+            <div class="child_product_container1"><%
+						String base64 = Base64.encodeBase64String(prod.getImage());
+						%> <img height="300" width="300" alt="unknown"
+						src="data:image/jpeg;base64,<%=base64%>">
                 <h5 style="position: relative;top: 5px;">
-                    DELL
+                    <%=prod.getName() %>-<%=prod.getBrand() %>
                 </h5>
                 <h5 style="position: relative;top: 5px;">
-                    DELL101
+                    (<%=prod.getSubcategory() %>)
                 </h5>
             <h3 style="color: coral;position: relative;top: 5px;">
-                30000.00
+               <%=prod.getPrice()%> &#8377
             </h3>
             <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px;">Add to cart</button></a>
             </div>
-        
-        
-            <div class="child_product_container1">
-                <img src="../image/oppom.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    OPPO
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    OPPO101
-                </h5>
-            <h3 style="color: coral;">
-                20000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px; width: 100px;">Add to cart</button></a>
-                </div>
-            
-            
-            <div class="child_product_container1"><img src="../image/tvimg1.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    SONY
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    SONY101
-                </h5>
-            <h3 style="color: coral;">
-                30000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;">Add to cart</button></a>
-                </div>
-            
-           
-            <div class="child_product_container1"><img src="../image/sound.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    BOAT
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    BOAT101
-                </h5>
-            <h3 style="color: coral;">
-                15000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;">Add to cart</button></a>
-                </div>
+       
+<%} %>     
 
         </div>
     
     </div>
-    <!-- <div><marquee behavior="alternate" direction="right" style="font-size: 50px;font-style: italic;">Collection</marquee></div> -->
-    <div style="font-size: 50px;font-style: italic;position: relative;left: 50px;">Grocery</div>
-    <div class="product_container">
-        <div class="child_product_container">
-           
-            <div class="child_product_container1"><img src="../image/dal.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    DAL
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    DAL101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                120.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-        
-            <div class="child_product_container1"><img src="../image/godhi.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    GODHI
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    GODHI101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                50.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-                </div>
-            
-            <div class="child_product_container1"><img src="../image/sugar.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    SUGAR
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    SUGAR101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                50.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-                </div>
-            
-            <div class="child_product_container1"><img src="../image/fennel seeds.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    FENNEL
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    FENNEL101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                100.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-                </div>
-            
-        </div>
-
-    </div>
-
-
-    <!-- <div><marquee behavior="alternate" direction="right" style="font-size: 50px;font-style: italic;">Collection</marquee></div> -->
-    <div style="font-size: 50px;font-style: italic;position: relative;left: 50px;">Cloths</div>
-    <div class="product_container">
-        <div class="child_product_container">
-           
-            <div class="child_product_container1"><img src="../image/cloth1.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    Raymond
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    Raymond101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                1500.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-            
-            <div class="child_product_container1"><img src="../image/cloth3.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    LENEN
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    LENEN101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                2000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-                </div>
-            
-            <div class="child_product_container1"><img src="../image/cloth2.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    SPOQUE
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    SPOQUE101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                1000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-       
-            <div class="child_product_container1"><img src="../image/cloth6.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    ATHENA
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    ATHENA101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                1000.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-        
-        </div>
     
-
-    </div>
-
-
-    <!-- <div><marquee behavior="alternate" direction="right" style="font-size: 50px;font-style: italic;">Collection</marquee></div> -->
-    <div style="font-size: 50px;font-style: italic;position: relative;left: 50px;">Shoes</div>
-    <div class="product_container">
-        <div class="child_product_container">
-            
-            <div class="child_product_container1"><img src="../image/shoes.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    SPARk
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    SPARK101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                1800.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-
-            <div class="child_product_container1"><img src="../image/shoes1.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    BATA
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    BATA101
-                </h5>
-            <h3 style="color: coral;position: relative;top: 5px;">
-                400.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-       
-            <div class="child_product_container1"><img src="../image/shoes3.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    LAYASA
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    LAYASA101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                500.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none; position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-        
-            <div class="child_product_container1"><img src="../image/shoes2.jpg" alt="" class="img1">
-                <h5 style="position: relative;top: 5px;">
-                    NIKE
-                </h5>
-                <h5 style="position: relative;top: 5px;">
-                    NIKE101
-                </h5>
-            <h3 style="color: coral; position: relative;top: 5px;">
-                1200.00
-            </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px;">Add to cart</button></a>
-            </div>
-        
-        </div>
-
-    </div>
      <!-- footer -->
      <footer>
         <div class="container">

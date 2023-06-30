@@ -75,12 +75,12 @@ table{
     <hr>
 
 
-    <form action="" target="_blank">
+    <form action="/deleteproduct" method="post" >
         <h1>Delete Product</h1>
         <table cellspacing="25em">
             <tr>
                 <td><label for="Product"><strong>Product Id</strong></label></td>
-                <td><input type="text" name="product" id="product"></td>
+                <td><input type="text" name="id" id="product"></td>
             </tr>
             
             <tr>
