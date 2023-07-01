@@ -1,3 +1,4 @@
+<%@page import="com.protech.pharmaplus.dto.Customer"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,35 +19,47 @@
 <body>
 	<div id="parent">
 		<div class="admin">
-			<a href="/jsp/adminlogin.jsp" class="admin" style="text-decoration: none;"><img
+			<a href="/admin/login" class="admin" style="text-decoration: none;"><img
 				height="60px" width="60px" alt="unknown"
 				src="../images/adminlogo.png"></a>
 		</div>
 	</div>
 	<section class="parent1">
 		<div class="child1">
-			<a href="/jsp/home.jsp" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
+			<a href="/" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
 		</div>
 		<div id="child2">
 			<div id="child">
-				<a href="/jsp/home.jsp" style="text-decoration: none; color: white;">Home</a>
+				<a href="/" style="text-decoration: none; color: white;">Home</a>
 			</div>
+			
 			<div>
-				<a href="/Customer/products"
+				<a href="/customer/products"
 					style="text-decoration: none; color: white;">Products</a>
 			</div>
 			<div>
-				<a href="/jsp/login.jsp"
+				<a href="/aboutus"
+					style="text-decoration: none; color: white;">About us</a>
+			</div>
+			<%Customer customer=(Customer)session.getAttribute("customer") ;
+			if(customer==null){
+				
+			%>
+			<div>
+				<a href="/customer/login"
 					style="text-decoration: none; color: white;">Login</a>
 			</div>
 			<div>
-				<a href="/jsp/signup.jsp"
+				<a href="/customer/signup"
 					style="text-decoration: none; color: white;">SignUp</a>
 			</div>
+			<%} else{%>
 			<div>
-				<a href="/jsp/aboutus.jsp"
-					style="text-decoration: none; color: white;">About us</a>
+				<a href="/logout"
+					style="text-decoration: none; color: white;">Logout</a>
 			</div>
+			<%}%>
+			
 
 		</div>
 	</section>

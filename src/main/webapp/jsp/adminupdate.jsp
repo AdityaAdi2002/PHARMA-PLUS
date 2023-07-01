@@ -72,15 +72,12 @@ table{
     <div class="main">
     <nav>
        <div class="container">
-        <div><a href="./pro.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
-        <div><a href="./About.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
-        <div><a href="./product.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
-        <div><a href="./adminoperation.html" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Admin Dashboard</a> </div>
+        <div><a href="/admin/home" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
       </div>
     </nav>
     <hr>
 
-    <form action="/updateproduct" method="post" enctype="multipart/form-data">
+    <form action="/admin/update" method="post" enctype="multipart/form-data">
         
         <h2 style="position: relative; left: 18em;">Update Product Details</h2>
         <table cellpadding="" cellspacing="8em">

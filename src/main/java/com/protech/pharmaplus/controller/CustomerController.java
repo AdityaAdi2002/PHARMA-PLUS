@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,71 +16,50 @@ import com.protech.pharmaplus.dto.Customer;
 import com.protech.pharmaplus.dto.Product;
 import com.protech.pharmaplus.repository.CustomerRepository;
 import com.protech.pharmaplus.repository.ProductRepository;
+import com.protech.pharmaplus.service.CustomerService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/customer")
 public class CustomerController {
-	@Autowired // creates object
-	CustomerRepository repository;
+	
 @Autowired
-ProductRepository repository1;
-	@PostMapping("/customersignup")
-	public ModelAndView CustomerSignup(@ModelAttribute Customer cust) {
-		ModelAndView view = new ModelAndView();
-		Customer customer = null;
-		try {
-			long mobile = cust.getMno();
-			customer = repository.findByMno(mobile);
-		} catch (NumberFormatException e) {
-			String email = cust.getEmail();
-			customer = repository.findByEmail(email);
-		}
-		if (customer == null) {
-			repository.save(cust);
-			view.setViewName("/home");
-			view.addObject("pass", "Data Saved Succesfully");
-		} else {
-			view.addObject("fail", "Email or Mobile Already Exists");
-			view.setViewName("/signup");
-		}
-		return view;
+CustomerService customerService;
+
+@GetMapping("signup")
+public String gotoSignup()
+{
+	return "CustomerSignup";
+}
+
+@GetMapping("/login")
+public String gotoLogin()
+{
+	return "CustomerLogin";
+}
+
+	@PostMapping("/signup")
+	public String CustomerSignup(@ModelAttribute Customer customer, ModelMap model) {
+		return customerService.signup(customer,model);
 	}
 
-	@PostMapping("/customerlogin")
-	public ModelAndView customerLogin(@RequestParam String user, @RequestParam String password) {
-		ModelAndView view = new ModelAndView();
-		Customer customer = null;
-		try {
-			long mobile = Long.parseLong(user);
-			customer = repository.findByMno(mobile);
-		} catch (NumberFormatException e) {
-			String email = user;
-			customer = repository.findByEmail(email);
-		}
-		if (customer == null) {
-			view.addObject("fail", "Incorrect Email or Mobile");
-			view.setViewName("/login");
-		} else {
-			if (customer.getPwd().equals(password)) {
-				view.addObject("pass", "Login Success");
-				view.setViewName("/home");
-			} else {
-				view.addObject("fail", "Incorrect Password");
-				view.setViewName("/login");
-			}
-		}
-		return view;
+	@PostMapping("/login")
+	public String customerLogin(@RequestParam String user, @RequestParam String password ,HttpSession session,ModelMap model) {
+		return customerService.login(user,password,session,model);
 	}
-	@GetMapping("Customer/products")
-	public ModelAndView fetchAllproducts() {
-		ModelAndView view = new ModelAndView();
-		List<Product> list = repository1.findAll();
-		if (list.isEmpty()) {
-			view.addObject("fail", "data not found");
-			view.setViewName("/home");
-		} else {
-			view.setViewName("/product");
-			view.addObject("list", list);
-		}
-		return view;
+	@GetMapping("/products")
+	public String fetchAllproducts(ModelMap model) {
+		return customerService.fetchProducts(model);
 	}
-}
+	@GetMapping("/addtocart")
+	public String addToCart(HttpSession session,ModelMap model)
+	{
+		return customerService.addToCart(session,model);
+	}
+	@GetMapping("/login")
+	public String gotoCustomerLogin() {
+		return "CustomerLogin";
+	}
+	}
+

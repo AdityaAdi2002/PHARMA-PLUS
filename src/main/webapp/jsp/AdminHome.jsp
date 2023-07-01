@@ -81,9 +81,8 @@ form{
     <div class="main">
     <nav>
        <div class="container">
-         <div><a href="./jsp/home.jsp" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
-        <div><a href="./jsp/aboutus.jsp" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
-        <div><a href="./jsp/product.jsp" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
+         <div><a href="/admin/home" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
+        <div><a href="/logout" style="text-decoration: none;font-size: 20px;color: black;"> Logout</a> </div>
         
       </div>
     </nav>
@@ -92,11 +91,11 @@ form{
    <h1>${fail}</h1>
    
         <table cellspacing="30em">
-           <tr><td ><strong><button class="but1"><a href="/jsp/admininsert.jsp" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
+           <tr><td ><strong><button class="but1"><a href="/admin/insert" style="text-decoration: none;font-size: 20px;color: black;">Insert Product</a></button></strong></td></tr>
            <tr><td ><strong><button class="but1"><a href="/admin/products" style="text-decoration: none;font-size: 20px;color: black;">View all Product</a></button></strong></td></tr>
-           <tr><td><strong><button class="but2"><a href="/jsp/adminupdate.jsp" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
-            <tr><td><strong><button class="but3"><a href="/jsp/admindelete.jsp" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
-            <tr><td ><strong><button class="but1"><a href="admin/Customer" style="text-decoration: none;font-size: 18px;color: black;">view all customers</a></button></strong></td></tr>
+           <tr><td><strong><button class="but2"><a href="/admin/update" style="text-decoration: none;font-size: 20px;color: black;">Update Product</a></button></strong></td></tr>
+            <tr><td><strong><button class="but3"><a href="/admin/delete" style="text-decoration: none;font-size: 20px;color: black;">Delete Product</a></button></strong></td></tr>
+            <tr><td ><strong><button class="but1"><a href="/admin/customer" style="text-decoration: none;font-size: 18px;color: black;">view all customers</a></button></strong></td></tr>
         </table>
   
 </body>

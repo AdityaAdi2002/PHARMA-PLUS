@@ -225,7 +225,7 @@ input[value="Submit"]
 </section>
 
         <div class="container-fluid">
-            <form action="/adminlogin" method="post" >
+            <form action="/admin/login" method="post" >
                 <table class="tab" style="height: 300px; width: 300px; border-radius: 10px;" >
                 <tr>
                 <th>${fail}</th>

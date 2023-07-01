@@ -103,11 +103,11 @@ input[id="password"] {
 	</div>
 	<section class="parent1">
 		<div class="child1">
-			<a href="/jsp/home.jsp" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
+			<a href="/" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
 		</div>
 		<div id="child2">
 			<div id="child">
-				<a href="/jsp/home.jsp" style="text-decoration: none; color: white;">Home</a>
+				<a href="/" style="text-decoration: none; color: white;">Home</a>
 			</div>
 			<div>
 				<a href="/jsp/product.jsp"
@@ -129,7 +129,7 @@ input[id="password"] {
 		</div>
 	</section>
 	<div class="login">
-		<form action="/customerlogin" method="post">
+		<form action="/customer/login" method="post">
 			<table class="tab"
 				style="height: 300px; width: 300px; border-radius: 10px;">
 				<tr>

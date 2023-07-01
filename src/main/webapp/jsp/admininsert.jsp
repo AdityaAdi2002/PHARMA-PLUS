@@ -76,16 +76,13 @@ table{
     <div class="main">
     <nav>
        <div class="container">
-        <div><a href="./aboutus.jsp" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
-        <div><a href="./aboutus.jsp" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> About </a></div>
-        <div><a href="./product.jsp" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Product</a> </div>
-        <div><a href="./adminoperation.jsp" target="_blank" style="text-decoration: none;font-size: 20px;color: black;"> Admin Dashboard</a> </div>
-       
+        <div><a href="/admin/home" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
+        
       </div>
     </nav>
     <hr>
 
-    <form action="/insertproduct" method="post" enctype="multipart/form-data">
+    <form action="/admin/insert" method="post" enctype="multipart/form-data">
         <h2 >Insert Product Details</h2>
         <table cellpadding="" cellspacing="10em">
             <tr>

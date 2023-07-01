@@ -1,3 +1,4 @@
+<%@page import="com.protech.pharmaplus.dto.Customer"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,25 +24,29 @@
 </div>
 <section class="parent1">
     <div class="child1">
-        <a href="/jsp/home.jsp"  style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
+        <a href="/"  style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
     </div>
     <div id="child2">
         <div id="child">
-        <a href="/jsp/home.jsp" style="text-decoration: none; color: white; ">Home</a>
+        <a href="/" style="text-decoration: none; color: white; ">Home</a>
     </div>
     <div>
         <a href="/jsp/product.jsp" style="text-decoration: none; color: white;">Products</a>
     </div>
+    <%Customer customer=(Customer)session.getAttribute("customer") ;
+			if(customer==null){
+				
+			%>
     <div>
         <a href="/jsp/login.jsp" style="text-decoration: none; color: white;">login</a>
     </div>
     <div>
         <a href="/jsp/signup.jsp" style="text-decoration: none; color: white;">SignUp</a>
     </div>
+    <%} %>
     <div>
         <a href="/jsp/aboutus.jsp" style="text-decoration: none; color: white;">About us</a>
     </div>
-   
 </div>
 </section>
    <div class="about">

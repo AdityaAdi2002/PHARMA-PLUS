@@ -18,11 +18,11 @@
 	</div>
 	<section class="parent1">
 		<div class="child1">
-			<a href="/jsp/home.jsp" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
+			<a href="/" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
 		</div>
 		<div id="child2">
 			<div id="child">
-				<a href="/jsp/home.jsp" style="text-decoration: none; color: white;">Home</a>
+				<a href="/" style="text-decoration: none; color: white;">Home</a>
 			</div>
 			<div>
 				<a href="/jsp/product.jsp"
@@ -45,7 +45,7 @@
 	</section>
 ${fail}
      <div class="bodycentre">
-    <form action="/customersignup" method="post">
+    <form action="/customer/signup" method="post">
         <h1 class="header" style="color: white;">SignUp</h1>
         <table cellspacing="20em">
             <tr>

@@ -196,7 +196,7 @@ overflow-x:hidden;
             <h3 style="color: coral;position: relative;top: 5px;">
                <%=prod.getPrice()%> &#8377
             </h3>
-            <a href="./cart.html" target="_blank"><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px;">Add to cart</button></a>
+            <a href="/customer/addtocart" ><button style="background-color: goldenrod;font-size: 15px;padding: 10px;border-style: none;position: relative;top: 5px;">Add to cart</button></a>
             </div>
        
 <%} %>     
