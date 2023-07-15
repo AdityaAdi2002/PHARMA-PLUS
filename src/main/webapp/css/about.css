@@ -2,7 +2,10 @@
 	padding: 0;
 	margin: 0;
 }
-
+.cart{
+    color: beige;
+    text-decoration: none;
+}
 #parent {
 	display: flex;
 	justify-content: end;

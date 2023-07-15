@@ -30,9 +30,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/login")
-	public String simple(@RequestParam String user, @RequestParam String pass, HttpSession session, ModelMap model) {
+	public String login(@RequestParam String user, @RequestParam String pass, HttpSession session, ModelMap model) {
 		return adminService.login(user, pass, session, model);
-
 	}
 
 	@GetMapping("/home")
@@ -41,20 +40,17 @@ public class AdminController {
 	}
 
 	@GetMapping("/insert")
-	public String admininsert(HttpSession session, ModelMap model) {
-
+	public String adminInsert(HttpSession session, ModelMap model) {
 		if (session.getAttribute("admin") == null) {
 			model.put("fail", "Session Expired");
 			return "AdminHome";
 		} else {
 			return "AdminInsert";
 		}
-
 	}
 
 	@GetMapping("/update")
-	public String adminupdate(HttpSession session, ModelMap model) {
-
+	public String adminUpdate(HttpSession session, ModelMap model) {
 		if (session.getAttribute("admin") == null) {
 			model.put("fail", "Session Expired");
 			return "AdminHome";
@@ -65,7 +61,6 @@ public class AdminController {
 
 	@GetMapping("/delete")
 	public String admindelete(HttpSession session, ModelMap model) {
-
 		if (session.getAttribute("admin") == null) {
 			model.put("fail", "Session Expired");
 			return "AdminHome";
@@ -96,8 +91,8 @@ public class AdminController {
 		return adminService.fetchProducts(session, model);
 	}
 
-	@GetMapping("/customer")
+	@GetMapping("/customers")
 	public String fetchAllCustomer(HttpSession session, ModelMap model) {
-		return adminService.fetchCustomers(session, model);
+		return adminService.fetchCustomer(session, model);
 	}
 }

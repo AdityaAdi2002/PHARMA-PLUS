@@ -9,21 +9,21 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class GeneralController {
 
-@GetMapping("/")
-public String gotoHome() {
-	return "Home";
-}
-	
-@GetMapping("/aboutus")
-public String gotoAboutUs() {
-	return "AboutUs";
-}
+	@GetMapping("/")
+	public String gotoHome() {
+		return "Home";
+	}
 
-@GetMapping("/logout")
-public String logout(HttpSession session,ModelMap model) {
-	session.invalidate();
-	model.put("pass", "Logout Success");
-	return "Home";
-}
+	@GetMapping("/aboutus")
+	public String gotoAboutUs() {
+		return "AboutUs";
+	}
+
+	@GetMapping("/logout")
+	public String logout(HttpSession session, ModelMap model) {
+		session.invalidate();
+		model.put("pass", "Logout Success");
+		return "Home";
+	}
 
 }

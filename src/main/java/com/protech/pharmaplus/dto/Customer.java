@@ -2,10 +2,13 @@ package com.protech.pharmaplus.dto;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 @Component
@@ -18,6 +21,17 @@ public class Customer {
 	long mno;
 	String email;
 	String pwd;
+
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	ShoppingCart cart;
+
+	public ShoppingCart getCart() {
+		return cart;
+	}
+
+	public void setCart(ShoppingCart cart) {
+		this.cart = cart;
+	}
 
 	public int getId() {
 		return id;

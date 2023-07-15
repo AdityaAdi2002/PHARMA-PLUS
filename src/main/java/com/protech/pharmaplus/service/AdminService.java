@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.protech.pharmaplus.dto.Customer;
 import com.protech.pharmaplus.dto.Product;
@@ -26,7 +25,6 @@ public class AdminService {
 	CustomerRepository customerRepository;
 
 	public String login(String user, String pass, HttpSession session, ModelMap model) {
-
 		if (user.equals("admin")) {
 			if (pass.equals("admin")) {
 				session.setAttribute("admin", "admin");
@@ -34,7 +32,7 @@ public class AdminService {
 				return "AdminHome";
 			} else {
 				model.put("fail", "Enter proper Password");
-				return "AdmnLogin";
+				return "AdminLogin";
 			}
 		} else {
 			model.put("fail", "Enter proper Email");
@@ -43,24 +41,19 @@ public class AdminService {
 	}
 
 	public String insert(Product product, MultipartFile pic, ModelMap model) throws IOException {
-
 		byte[] image = new byte[pic.getInputStream().available()];
 		pic.getInputStream().read(image);
 
 		product.setImage(image);
 		productRepository.save(product);
-
 		model.put("pass", "product added success");
-		return "AdminHome.jsp";
-
+		return "AdminHome";
 	}
 
 	public String update(Product product, MultipartFile pic, ModelMap model) throws IOException {
-
-		Product product2 = productRepository.findById(product.getId()).orElse(product);
+		Product product2 = productRepository.findById(product.getId()).orElse(null);
 		if (product2 == null) {
 			model.put("fail", "Incorrect Id");
-
 		} else {
 			byte[] image = new byte[pic.getInputStream().available()];
 			pic.getInputStream().read(image);
@@ -72,7 +65,6 @@ public class AdminService {
 
 			productRepository.save(product);
 			model.put("pass", "product updated success");
-
 		}
 		return "AdminHome";
 	}
@@ -87,7 +79,6 @@ public class AdminService {
 
 		}
 		return "AdminHome";
-
 	}
 
 	public String fetchProducts(HttpSession session, ModelMap model) {
@@ -107,11 +98,9 @@ public class AdminService {
 		}
 	}
 
-	public String fetchCustomers(HttpSession session, ModelMap model) {
-		ModelAndView view = new ModelAndView();
+	public String fetchCustomer(HttpSession session, ModelMap model) {
 		if (session.getAttribute("admin") == null) {
-
-			view.addObject("fail", "Session Expired");
+			model.put("fail", "Session Expired");
 			return "AdminHome";
 		} else {
 			List<Customer> list = customerRepository.findAll();
@@ -119,11 +108,10 @@ public class AdminService {
 				model.put("fail", "data not found");
 				return "AdminHome";
 			} else {
-
-				view.addObject("list", list);
-				return "ViewCustomers";
+				model.put("list", list);
+				return "ViewCustomer";
 			}
 		}
-
 	}
+
 }

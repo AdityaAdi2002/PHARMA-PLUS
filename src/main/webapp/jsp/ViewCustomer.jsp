@@ -95,6 +95,28 @@ td {
 </head>
 <body>
 
+ <h1 id="successMessage" style="color:green">${pass}</h1>
+<h1 id="failMessage" style="color:red">${fail}</h1>
+
+<script>
+    // Get the success and fail message elements
+    var successMessage = document.getElementById("successMessage");
+    var failMessage = document.getElementById("failMessage");
+
+    // Check if the success message exists and display it as a pop-up alert
+    if (successMessage.innerText !== "") {
+        window.alert(successMessage.innerText);
+        successMessage.style.display = "none"; // Hide the success message element
+    }
+
+    // Check if the fail message exists and display it as a pop-up alert
+    if (failMessage.innerText !== "") {
+        window.alert(failMessage.innerText);
+        failMessage.style.display = "none"; // Hide the fail message element
+    }
+</script>
+
+
 	<%
 	List<Customer> list = (List<Customer>) request.getAttribute("list");
 	%>
@@ -121,18 +143,18 @@ td {
 				cellpadding="50em" border="2em">
 
 				<tr id="cart_head">
-					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER ID
-							ID</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER FIRST
-							NAME</h3></td>
-					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER LAST NAME
-							</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER
+							ID ID</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER
+							FIRST NAME</h3></td>
+					<td style="text-align: center; padding: 20px;"><h3>CUSTOMER
+							LAST NAME</h3></td>
 					<td style="text-align: center; padding: 20px;"><h3>E-MAIL</h3></td>
 					<td style="text-align: center; padding: 20px;"><h3>MOBILE-NO</h3></td>
-					
+
 				</tr>
 				<%
-				for (Customer cust:list) {
+				for (Customer cust : list) {
 				%>
 				<tr>
 					<td style="text-align: center;"><%=cust.getId()%></td>
@@ -141,15 +163,15 @@ td {
 					<td style="text-align: center;"><h3><%=cust.getEmail()%></h3>
 					</td>
 					<td style="text-align: center;"><%=cust.getMno()%></td>
-					
+
 				</tr>
 
 				<%
 				}
 				%>
 			</table>
-			
+
 		</center>
-<a href="/jsp/adminoperation.jsp"><button>Back</button></a>
+		<a href="/jsp/adminoperation.jsp"><button>Back</button></a>
 </body>
 </html>
