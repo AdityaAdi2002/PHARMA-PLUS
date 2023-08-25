@@ -125,7 +125,7 @@ td {
 		<nav>
 			<div class="container">
 				<div>
-					<a href="./pro.html" target="_blank"
+					<a href="/admin/home" 
 						style="text-decoration: none; font-size: 20px; color: black;">Home</a>
 				</div>
 
@@ -172,6 +172,6 @@ td {
 			</table>
 
 		</center>
-		<a href="/jsp/adminoperation.jsp"><button>Back</button></a>
+		
 </body>
 </html>

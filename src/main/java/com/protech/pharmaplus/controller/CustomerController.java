@@ -72,5 +72,10 @@ public class CustomerController {
 	public String search(@RequestParam String product, ModelMap map) {
 		return customerService.search(product, map);
 	}
+	
+	@PostMapping("/paymentsuccess")
+	public String billing(HttpSession session, ModelMap model) {
+		return customerService.billing(session, model);
+	}
 
 }

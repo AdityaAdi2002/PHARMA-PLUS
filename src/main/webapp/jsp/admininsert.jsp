@@ -98,7 +98,7 @@ table{
     <div class="main">
     <nav>
        <div class="container">
-        <div><a href="/admin/home" target="_blank" style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
+        <div><a href="/admin/home" " style="text-decoration: none;font-size: 20px;color: black;">Home</a></div>
         
       </div>
     </nav>
@@ -109,11 +109,11 @@ table{
         <table cellpadding="" cellspacing="10em">
             <tr>
                 <td class="td1"><label for="cat"><strong> Category</strong></label></td>
-                <td><input type="text" name="category" id="cat" placeholder="Men" class="td2"></td>
+                <td><input type="text" name="category" id="cat" placeholder="category" class="td2"></td>
             </tr>
             <tr>
                 <td class="td1" ><label for="sub"><strong>Subcategory</strong></label></td>
-                <td><input type="text" name="subcategory" id="sub" placeholder="category"  class="td2"></td>
+                <td><input type="text" name="subcategory" id="sub" placeholder="subcategory"  class="td2"></td>
             </tr>
             <tr>
                 <td class="td1" ><label for="fname"><strong>Name</stong></label></td>
@@ -133,8 +133,8 @@ table{
             </tr>
             
             <tr>
-                <td class="td1" ><label for="size"><strong>Size</strong></label></td>
-                <td><input type="text" name="size" id="size" placeholder="s"  class="td2"></td>
+                <td class="td1" ><label for="size"><strong>Quantity</strong></label></td>
+                <td><input type="text" name="size" id="qty" placeholder="s"  class="td2"></td>
             </tr>
             <tr>
                 <td><td>

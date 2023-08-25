@@ -14,134 +14,107 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <style>
-*{
-	padding: 0;
-	margin: 0;
-}
-
-#parent {
-	display: flex;
-	justify-content: end;
-	background-color: rgba(27, 27, 27, 1);
-	height: 50px;
-	width: 100%;
-	position: sticky;
-	top: 0px;
-	z-index: 2;
-	align-items: center;
-}
-
-.admin {
-	color: beige;
-	position: relative;
-	left: -20px;
-}
-
-.admin:hover {
-	color: red;
-}
-.parent1{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-height: 100px;
-align-items: center;
-}
-.child1{
-    color: white;
-    position: relative;
-    left: -15rem;
-}
-#child2{
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-}
-.cart1:hover{
-color: aqua;
-}
+ *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        display: flex;
+        background-color: black;
+        height: 80px;
+    }
+    #part2{
+        display: flex;
+        position: relative;
+        left: 25%;
+      
+       
+        color: white;
+        list-style: none;
+        width: 50%;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 20px;
         
-a{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-}
-h1{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+       
+    }
+  
 
-}
-
-        #nav_bar{
-    width: 100%;
-    height: 3em;
-    background-color: black;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
-}
-.cart{
-    color: white;
-    font-size: 1em;
-    position: relative;
-     left: -5em;
-
-}
-/* img:hover{
-    background-color: red;
-} */
-.admin:hover{
-    color: red;
-}
-*{
-    margin: 0;
-    padding: 0;
-}
-.admin{
-    color: white;
-    font-size: 1em;
-    position: relative;
-     left: -3em; 
-}
-#nav_main{
-    width: 100ew;
-    height: 6em;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#nav_child1{
-    width: 30%;
-    text-align: center;
-}
-#nav_child2{
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.3em;
-    font-family: 'Times New Roman', Times, serif;
-    
-}
-.nav_child:hover{
-    color: red;
-}
-#nav_child3{
-    width: 20%;
-    display: flex;
-    justify-content: end;
-}
-
-h1{
-    font-size: 50px;
-    font-family:'Times New Roman', Times, serif;
-    font-weight: lighter;
-}
-
+    #part1{
+        position: relative;
+        left: 4%;
+        display: flex;
+        align-items: center;
+        font-size: 40px;
+        font-weight: bolder;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        transition: all 1s linear;
+    }
+    #part1:hover{
+        transform: rotate(360deg);
+  
+    }
+    #part3{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        transition: all 0.5s linear;
+    }
+    #part3:hover{
+        background-color: rgb(248, 248, 243);
+        color: black;
+        border-radius: 5px;
+       
+    }
+    #part4{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        transition: all 0.5s linear;
+    }
+    #part4:hover{
+        background-color: rgb(248, 248, 243);
+        color: black;
+        border-radius: 5px;
+       
+    }
+    #part5{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        transition: all 0.5s linear;
+    }
+    #part5:hover{
+        background-color: rgb(248, 248, 243);
+        color: black;
+        border-radius: 5px;
+       
+    }
+    #part6{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        transition: all 0.5s linear;
+    }
+    #part6:hover{
+        background-color: rgb(248, 248, 243);
+        color: black;
+        border-radius: 5px;
+       
+    }
+    #part7{
+        background-color: black;
+        text-decoration: none;
+        color: white;
+        transition: all 0.5s linear;
+    }
+    #part7:hover{
+        background-color: rgb(248, 248, 243);
+        color: black;
+        border-radius: 5px;
+       
+    }
 
 
 .container-fluid{
@@ -218,45 +191,40 @@ input[value="Submit"]
    
 </div>
 
-<section class="parent1">
-		<div class="child1">
-			<a href="/" style="text-decoration: none; color: white;"><h1>PHARMA+</h1></a>
-		</div>
-		<div id="child2">
-			<div id="child">
-				<a href="/" style="text-decoration: none; color: white;">Home</a>
-			</div>
-			
-			<div>
-				<a href="/customer/products"
-					style="text-decoration: none; color: white;">Products</a>
-			</div>
-			
-			<%Customer customer=(Customer)session.getAttribute("customer") ;
-			if(customer==null){
-				
-			%>
-			<div>
-				<a href="/customer/login"
-					style="text-decoration: none; color: white;">Login</a>
-			</div>
-			<div>
-				<a href="/customer/signup"
-					style="text-decoration: none; color: white;">SignUp</a>
-			</div>
-			<%} else{%>
-			<div class="cart">
-        <a href="" class="cart"><img src="data:image/jpeg;base64,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" alt="Cart" width="39em" height="39em" style="border-radius: 10em;">Cart</a>   
+<nav>
+    <div id="part1">
+        PHARMA<p style="color: greenyellow;">+</p>
     </div>
-			<div>
-				<a href="/logout"
-					style="text-decoration: none; color: white;">Logout</a>
-			</div>
-			<%}%>
-			
+    <div id="part2">
+        <li><a href="/" id="part3">Home</a></li>
+        <li><a href="/aboutus" id="part4">About Us</a></li>
+        <li><a href="/customer/products" id="part5">Products</a></li>
+        <%Customer customer=(Customer)session.getAttribute("customer");
+                if(customer==null){
+                %>
+        <li><a href="/customer/login"id="part6">Login</a></li>
+        <li><a href="/customer/signup" id="part7">Signup</a></li>
+          <%}else{%>
+             <div class="cart">
+        <a href="/customer/cart" class="cart"><img src="data:image/jpeg;base64,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" alt="Cart" width="39em" height="39em" style="border-radius: 10em;"></a>   
+    </div>
+                <div>
+                    <a href="/logout" style="text-decoration: none; color: white;">Logout</a>
+                    
+                </div>
+                <%} %>
+            </div>
+           
+        
+        <div class="admin" style="position: relative;left: 490px;top:6px">
+       
+          <a href="/admin/login" class="admin" style="text-decoration: none;"> <img height="55px" width="55px" alt="" src="../images/adminlogo.png"></a>
+      </div>
+  </div> 
+    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                     
 
-		</div>
-	</section>
+</nav>
 
         <div class="container-fluid">
             <form action="/admin/login" method="post" >

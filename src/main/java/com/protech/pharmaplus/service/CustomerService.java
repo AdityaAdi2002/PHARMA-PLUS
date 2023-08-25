@@ -3,6 +3,7 @@ package com.protech.pharmaplus.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
@@ -10,9 +11,13 @@ import org.springframework.ui.ModelMap;
 import com.protech.pharmaplus.dto.Customer;
 import com.protech.pharmaplus.dto.Item;
 import com.protech.pharmaplus.dto.Product;
+import com.protech.pharmaplus.dto.RazorPayOrder;
 import com.protech.pharmaplus.dto.ShoppingCart;
 import com.protech.pharmaplus.repository.CustomerRepository;
 import com.protech.pharmaplus.repository.ProductRepository;
+import com.razorpay.Order;
+import com.razorpay.RazorpayClient;
+import com.razorpay.RazorpayException;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -22,6 +27,10 @@ public class CustomerService {
 	CustomerRepository customerRepository;
 	@Autowired
 	ProductRepository productRepository;
+
+	private static final String KEY = "rzp_test_f4vcAPoh0RDZfi";
+	private static final String KEY_SECRETKEY = "jjblWSJ6F7NJuPUOtNmDjg4i";
+	private static final String CURRENCY = "INR";
 
 	public String signup(Customer customer, ModelMap model) {
 		Customer customer1 = null;
@@ -38,7 +47,7 @@ public class CustomerService {
 			return "Home";
 		} else {
 			model.put("fail", "Email or Mobile Already Exists");
-			return "AdminSignup";
+			return "CustomerSignup";
 		}
 
 	}
@@ -139,8 +148,8 @@ public class CustomerService {
 				model.put("fail", "data not found");
 				return "Home";
 			} else {
-				model.put("list", list);
-				return "CustomerProduct";
+				model.put("list", items);
+				return "CustomerCart";
 			}
 		}
 	}
@@ -199,12 +208,40 @@ public class CustomerService {
 			for (Item item : customer.getCart().getItems()) {
 				price = price + (item.getPrice());
 			}
-			model.put("price", price);
-			model.put("payment", payment);
-			model.put("customer", customer);
-			customerRepository.save(customer);
-			return "Customer_billing";
+
+			if (payment.equals("RazorPay")) {
+				JSONObject object = new JSONObject();
+				object.put("amount", price * 100);
+				object.put("currency", CURRENCY);
+
+				RazorpayClient client;
+				try {
+					client = new RazorpayClient(KEY, KEY_SECRETKEY);
+					Order order2 = client.orders.create(object);
+
+					RazorPayOrder order = new RazorPayOrder();
+					order.setAmount(order2.get("amount").toString());
+					order.setCurrency(order2.get("currency").toString());
+					order.setPaymentId(null);
+					order.setOrderid(order2.get("id").toString());
+					order.setStatus(order2.get("status"));
+					order.setKey(KEY);
+					model.put("order", order);
+					model.put("customer", customer);
+
+				} catch (RazorpayException e) {
+					e.printStackTrace();
+				}
+				return "RazorPayHome";
+			} else {
+				model.put("price", price);
+				model.put("payment", payment);
+				model.put("customer", customer);
+				customerRepository.save(customer);
+				return "Customer_billing";
+			}
 		}
+
 	}
 
 	public String search(String product, ModelMap map) {
@@ -215,6 +252,24 @@ public class CustomerService {
 		} else {
 			map.put("list", list);
 			return "Search-product";
+		}
+	}
+
+	public String billing(HttpSession session, ModelMap model) {
+		double price = 0;
+		Customer customer = (Customer) session.getAttribute("customer");
+		if (customer == null) {
+			model.put("fail", "please login again");
+			return "CustomerLogin";
+		} else {
+			for (Item item : customer.getCart().getItems()) {
+				price = price + (item.getPrice());
+			}
+			model.put("price", price);
+			model.put("payment", "RazorPay");
+			model.put("customer", customer);
+			customerRepository.save(customer);
+			return "Customer_billing";
 		}
 	}
 }

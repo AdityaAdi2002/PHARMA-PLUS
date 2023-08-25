@@ -193,7 +193,7 @@ body{
 				
 				<tr>
 				<td>
-					<button style="width: 15%;height: 100%;;position: relative;right:24%; bottom:60px;font-weight: 700;border-radius: 5px;"><a href="/" style="text-decoration: none;"><---</a></button>
+					<button style="width: 15%;height: 100%;;position: relative;right:24%; bottom:60px;font-weight: 700;border-radius: 5px;" title="Back"><a href="/" style="text-decoration: none;"><---</a></button>
 				</td>
 			</tr>
 				<tr>
@@ -233,12 +233,11 @@ body{
 				<tr>
 					<td>
 						<button
-							style="width: 200px; height: 35px;position: relative;outline: 2px solid black;bottom: 50%;left: 10%; background-color:#176B87; border-style: none; border-radius: 2px;font-weight: 700					;" >Login</button>
+							style="width: 200px; height: 35px;position: relative;outline: 2px solid black;bottom: 50%;left: 10%; background-color:#176B87; border-style: none; border-radius: 2px;font-weight: 700;" >Login</button>
 					</td>
 				</tr>
             <tr>
 				<td>
-					<a href="" style="position: relative;color:blue;left: 20%;bottom: 70%;font-size: 20px;">Forgot password?</a>
 				</td>
 			</tr>
 			<tr>
@@ -248,7 +247,7 @@ body{
 			</tr>
 			<tr>
 				<td>
-					<button style="width: 80%;height: 100%;background-color:#176B87;position: relative;left: 10%;font-weight: 700;border-radius: 5px;"><a href="/customer/signup" style="text-decoration: none;color: black;font-weight: bold;">Signup</a></button>
+					<button style="width: 80%;height: 100%;background-color:#176B87;position: relative;left: 10%;top: 5px;font-weight: 700;border-radius: 5px;"><a href="/customer/signup" style="text-decoration: none;color: black;font-weight: bold;">Signup</a></button>
 				</td>
 			</tr>
 			</table>

@@ -9,11 +9,18 @@
         <title>Admin</title>
         <style>
             body {
-                background-image: url(../image/prbg1.jpg);
-                /* width: 10em; */
-                overflow: hidden;
+                background-image:url("https://images.unsplash.com/photo-1586015555751-63bb77f4322a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGhhcm1hY3l8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60");
+                background-repeat: no-repeat;
+                background-size: 100% 100vh;
+             overflow-x: hidden;
+               
 
             }
+
+*{
+margin: 0;
+padding: 0;
+}
 
             h1 {
                 position: relative;
@@ -63,6 +70,7 @@
                 width: 13em;
                 border: 2em;
                 border-radius: 0.5em;
+                
 
             }
 
@@ -81,18 +89,42 @@
                 border: 2em;
                 border-radius: 0.5em;
             }
+            .demo{
+            display:flex;
+            }
+            .test{
+         height: 60px;
+         width: 170px;
+         border-radius: 16px;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         background-color: black;
+         color: white;
+         font-weight: bold;
+         font-size: 20px;
+         transition: all 1s linear;
+        }
+        .test:hover{
+            transform: scale(1.2,1.2);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            
+        }
         </style>
     </head>
 
     <body>
 
-        <h1 style="color: white;">ADMIN</h1>
+        <h1 style="color: black;text-decoration: none ;position:relative;left:40vw;">ADMIN</h1>
         <div class="main">
             <nav>
                 <div class="container">
                     <div><a href="/admin/home" style="text-decoration: none;font-size: 20px;color: black;">Home</a>
                     </div>
-                    <div><a href="/logout" style="text-decoration: none;font-size: 20px;color: black;"> Logout</a>
+                    <div><a href="/logout" style="text-decoration: none;font-size: 20px;color: black;transition:all 0.2s linear;hover{transform:scale(1.2)}"> Logout</a>
                     </div>
 
                 </div>
@@ -119,34 +151,16 @@
         failMessage.style.display = "none"; // Hide the fail message element
     }
 </script>
+  <br><br><br><br>
+            
+            
+           <div style="display: flex;justify-content:space-around;">
+        <div class="test"><a href="/admin/insert" target="_self">Insert product</a></div>
+        <div class="test"><a href="/admin/products" target="_self">view All Products</a></div>
+        <div class="test"><a href="/admin/update" target="_self">Update product</a></div>
+        <div class="test"><a href="/admin/delete" target="_self">Delete product</a></div>
 
-            <table cellspacing="30em">
-                <tr>
-                    <td><strong><button class="but1"><a href="/admin/insert"
-                                    style="text-decoration: none;font-size: 20px;color: black;">Insert
-                                    Product</a></button></strong></td>
-                </tr>
-                <tr>
-                    <td><strong><button class="but1"><a href="/admin/products"
-                                    style="text-decoration: none;font-size: 20px;color: black;">View all
-                                    Product</a></button></strong></td>
-                </tr>
-                <tr>
-                    <td><strong><button class="but2"><a href="/admin/update"
-                                    style="text-decoration: none;font-size: 20px;color: black;">Update
-                                    Product</a></button></strong></td>
-                </tr>
-                <tr>
-                    <td><strong><button class="but3"><a href="/admin/delete"
-                                    style="text-decoration: none;font-size: 20px;color: black;">Delete
-                                    Product</a></button></strong></td>
-                </tr>
-                <tr>
-                    <td><strong><button class="but1"><a href="/admin/customers"
-                                    style="text-decoration: none;font-size: 18px;color: black;">view all
-                                    customers</a></button></strong></td>
-                </tr>
-            </table>
+        <div class="test"><a href="/admin/customers" target="_self">View all Customers</a></div>  
 
     </body>
 

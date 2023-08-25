@@ -90,6 +90,17 @@ td {
 	height: 200px;
 	text-align: center;
 }
+button{
+		
+		top: 70px;
+		height: 30px;
+		width: 100px;
+		outline: 4px double black;
+	
+		font-size: 20px;
+		font-weight: 700;
+		border-radius: 5px;
+	}
 </style>
 </head>
 <body>
@@ -122,7 +133,7 @@ td {
 		<nav>
 			<div class="container">
 				<div>
-					<a href="/jsp/adminoperation.jsp" target="_blank"
+					<a href="/admin/home"
 						style="text-decoration: none; font-size: 20px; color: black;">Home</a>
 				</div>
 				
@@ -173,9 +184,15 @@ td {
 				<%
 				}
 				%>
+				
 			</table>
 			
+			
 		</center>
-<a href="/jsp/adminoperation.jsp"><button>Back</button></a>
+		<br><br><br>
+		<center>
+
+<button onclick="window.print()">print</button>
+</center>
 </body>
 </html>

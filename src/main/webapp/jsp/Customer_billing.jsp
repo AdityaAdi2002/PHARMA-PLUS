@@ -93,6 +93,7 @@ background-image: linear-gradient(to right,#F1F6F9,#394867);
 	</tr>
 	<%} %>
 	</table>
+	<h1>Delivery Address: <%=customer.getAddress()%></h1>
 	<h1>Total Price is : ${price} payment done through ${payment }</h1>
 	<button onclick="window.print()">print</button>
 </body>

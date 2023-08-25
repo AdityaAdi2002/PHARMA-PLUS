@@ -62,15 +62,15 @@ body{
 
 
 <form action="/customer/billing" method="post">
+
 <label>Payment mode</label><br><br>
 <br>
-<input type="radio" name="payment" value="Paytm">Paytm <br><br>
-<br>
-<input type="radio" name="payment" value="card">Card <br><br>
+<input type="radio" name="payment" value="RazorPay">RazorPay <br><br>
 <br>
 <input type="radio" name="payment" value="cod">Cash On Delivery  <br><br>
 <br>
 <button type="submit">Submit</button>
 </form>
+<button style="width: 3%;height: 110%;position: relative; bottom:230px;font-weight: 700;border-radius: 5px;"><a href="/" style="text-decoration: none;"><---</a></button>
 </body>
 </html>
